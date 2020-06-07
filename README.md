@@ -12,7 +12,7 @@ Since the sending process chooses the recipient peer for each round at random, t
 
 Each peer maintains two additional integer variables that are initialized to zero. One continuously sums the values of the random numbers that are sent as part of the payload, while the other variable continuously sums values of the payloads that are received. 
 
-**To verify Correctness**, each peer prints a repoort about the the sent and received messages. The total number of messages that were sent and received by the set of peers **P** must match (i.e. the cumulative sum of the sent and received messages must match. Also, to check that the packets were not corrupted,  the cumulative sum of the integer numbers that have been sent must exactly match the sum the integer numbers that have been received.
+**To verify Correctness**, each peer prints a report about the the sent and received messages. The total number of messages that were sent and received by the set of peers **P** must match (i.e. the cumulative sum of the sent and received messages must match. Also, to check that the packets were not corrupted,  the cumulative sum of the integer numbers that have been sent must exactly match the sum the integer numbers that have been received.
 
 
 ## The implemented packages
