@@ -10,12 +10,12 @@ import cs555.nc.transmission.SendingHandler;
 // This class represent a peer node which starts sending and receiving operations
 // through the objects  ReceivingHandler and SendingHandler.
 public class Process {
-	private	DataTracker dataTracker; 	// object that tracks the transmission of data 
+	private	DataTracker 	dataTracker; 		// object that tracks the transmission of data 
 	private int 		port;		 	// port the peer is listening on
 	
 	public Process(int port){
 		dataTracker 		= new DataTracker();
-		this.port 			= port;
+		this.port 		= port;
 	}
 	
 	private ReceivingHandler startReceiving() throws IOException{
