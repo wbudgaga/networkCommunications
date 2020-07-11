@@ -4,7 +4,7 @@ Experimenting with network communications to manage communications between nodes
 ## Description
 I implemented a network communication system that creates a set of processes (peers) **P** that are launched on different machines. Each peer reads information about all peers in the system from a text file (each line in the file contains the host and port information for a different process). A peer should never attempt to connect to itself. 
 
-Each process participates in a set of rounds (default: 10,000 rounds). In each round, each process sends connects to a randomly chosen peer in the set of processes **P**, and once a connection is established to a random node, the initiating peer sends **n** messages to the targeted process.   
+Each process participates in a set of rounds (default: 10,000 rounds). In each round, each process connects to a randomly chosen peer in the set of processes **P**, and once a connection is established to a random node, the initiating peer sends **n** messages to the targeted process.   
 The payload of each message is a random integer (positive or negative). 
 At the end of each round the socket connection is closed and the process is repeated by choosing another peer at random from the set **P**. Each peer will maintain two integer variables that are initialized to zero to track the number of messages that were sent and received by a peer. 
 
