@@ -5,12 +5,12 @@ import cs555.nc.tasks.Task;
 // Thread that execute tasks 
 public class Worker implements Runnable{
 	private ThreadPoolManager 	theManager;
-	private Thread	 			workerThread;
-	private Task	 			job 			= null;
+	private Thread	 		workerThread;
+	private Task	 		job 		= null;
 	
 	public Worker(ThreadPoolManager manager, int workerID){
 		theManager 		= manager;
-		workerThread 	= new Thread(this,"workerThread-"+workerID);
+		workerThread 		= new Thread(this,"workerThread-"+workerID);
 		
 	}
 	
@@ -26,13 +26,13 @@ public class Worker implements Runnable{
 	}
 
 	protected synchronized void assignTask(Task newTask){
-		this.job = newTask;
+		this.job 		= newTask;
 		notifyAll();
 	}
 
 	private void processJob(){
 		job.execute();
-		job = null;
+		job 			= null;
 		theManager.workerFinished(this);
 	}
 	
@@ -52,10 +52,8 @@ public class Worker implements Runnable{
 						wait();
 					if (hasJob()) 
 						processJob();
-				} catch (InterruptedException e) {	return;}
+				} catch (InterruptedException e) { return;}
 			}
 		}
-	
 	}
-
 }
