@@ -7,14 +7,14 @@ import cs555.nc.tasks.Task;
 
 // Starts and manages the work between workers that execute taks
 public class ThreadPoolManager{
-	private Worker[] 		workers;
-	private Queue<Task> 	taskQueue 		= new LinkedList<Task>();
+	private Worker[] 	workers;
+	private Queue<Task> 	taskQueue 	= new LinkedList<Task>();
 	private Queue<Worker> 	workerQueue 	= new LinkedList<Worker>();
 	
 	public ThreadPoolManager(int numberOfThreads) {
-		workers 		= new Worker[numberOfThreads];
+		workers 			= new Worker[numberOfThreads];
 		for (int i = 0; i < numberOfThreads; ++i) {
-			workers[i] 	= new Worker(this, i);
+			workers[i] 		= new Worker(this, i);
 		}
 	}
 		
@@ -39,8 +39,8 @@ public class ThreadPoolManager{
 	
 	private  void assignTasks(){
 		if (taskQueue.size() > 0 && workerQueue.size()>0){
-			Task task = taskQueue.poll();
-			Worker workerThread = workerQueue.poll();
+			Task task 		= taskQueue.poll();
+			Worker workerThread 	= workerQueue.poll();
 			workerThread.assignTask(task);
 		}
 	}
