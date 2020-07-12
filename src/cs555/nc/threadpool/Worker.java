@@ -46,7 +46,6 @@ public class Worker implements Runnable{
 	public void run() {
 		while(true){
 			synchronized(this){
-				
 				try {
 					if (!hasJob())
 						wait();
