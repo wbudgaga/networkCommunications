@@ -2,8 +2,8 @@ package cs555.nc.transmission;
 
 // This class tracks the data transmission and prints report about that
 public class DataTracker {
-	private	int		receiveTracker 		= 0;
-	private int		sendTracker 		= 0;
+	private	int	receiveTracker 		= 0;
+	private int	sendTracker 		= 0;
 	private long	receiveSummation 	= 0;
 	private long	sendSummation 		= 0;
 	
@@ -50,7 +50,7 @@ public class DataTracker {
 	public void report(){
 		String sentMessages 	= String.format("* %-22s: %6s      %-15s: %15s *","# Of Sent Messages",		getsentTracker(),	"Sent Data", 		getSentSummation());
 		String receivedMessages = String.format("* %-22s: %6s      %-15s: %15s *","# Of Received Messages",	getReceiveTracker(),"Received Data", 	getReceiveSummation());
-		String difference 		= String.format("* %-22s: %6s      %-15s: %15s *","Messages Difference",	getTrackerDif(),	"Data Difference", 	getSummationDif());
+		String difference 	= String.format("* %-22s: %6s      %-15s: %15s *","Messages Difference",	getTrackerDif(),	"Data Difference", 	getSummationDif());
 
 		System.out.println("\n\n\n\n************************ TRANSMISSION REPORT ***************************");
 		System.out.println(sentMessages+"\n"+receivedMessages);
